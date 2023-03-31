@@ -14,12 +14,12 @@ const AddMovieForm = () => {
         <div className={styles.form__right}>
           <h4 className={styles.form__title}>Add Movie</h4>
           <form action="" className={styles.form__area}>
-            <label for="title" className={styles.form__label}>
+            <label htmlFor="title" className={styles.form__label}>
               Title
             </label>
             <input name="title" className={styles.form__input} type="text" />
 
-            <label for="year" className={styles.form__label}>
+            <label htmlFor="year" className={styles.form__label}>
               Year
             </label>
             <input name="year" className={styles.form__input} type="text" />
