@@ -21,9 +21,18 @@
   list-style: none;
 }
 
-.navbar__item {
+
+.navbar__item a{
   margin-bottom: 1rem;
+  cursor: pointer;
   color: #fff;
+  text-decoration: none;
+  font-weight:500;
+}
+
+.navbar__item a:hover {
+  color: rgb(234, 234, 234);
+  text-decoration-line: underline;
 }
 
 /* Medium Screen */
@@ -51,5 +60,9 @@
 @media (min-width: 992px) {
   .container {
     padding: 1rem 5.5rem;
+  }
+
+  .navbar__item {
+    font-size: 1rem;
   }
 }

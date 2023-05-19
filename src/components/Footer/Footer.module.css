@@ -2,16 +2,27 @@
 .container {
   background-color: #4361ee;
   color: #fff;
-  padding: 1rem;
+  padding: 1.5rem 0;
   text-align: center;
 }
 
 .footer__title {
-  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  /* margin-bottom: -2rem; */
 }
 
 .footer__author {
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.footer__author a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__author a:hover {
+  color: rgb(234, 234, 234);
+  text-decoration-line: underline;
 }
 
 /* Medium Screen */

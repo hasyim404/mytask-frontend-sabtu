@@ -125,6 +125,7 @@ function AddMovieForm(props) {
   return (
     <div className={styles.container}>
       <div className={styles.form}>
+        {/* Left */}
         <div className={styles.form__left}>
           <img
             className={styles.form__img}
@@ -132,8 +133,12 @@ function AddMovieForm(props) {
             alt=""
           />
         </div>
+
+        {/* Right */}
         <div className={styles.form__right}>
           <h4 className={styles.form__title}>Add Movie</h4>
+
+          {/* Form */}
           <form action="" className={styles.form__area} onSubmit={handleSubmit}>
             <label className={styles.form__label}>Title :</label>
             <input
@@ -144,7 +149,9 @@ function AddMovieForm(props) {
               value={title}
               onChange={handleChange}
             />
-            {formError.title && <Alert>Title wajib diisi</Alert>}
+            <div className={styles.form__alert}>
+              {formError.title && <Alert>*Title wajib diisi</Alert>}
+            </div>
 
             <label className={styles.form__label}>Year :</label>
             <input
@@ -155,7 +162,9 @@ function AddMovieForm(props) {
               value={year}
               onChange={handleChange}
             />
-            {formError.year && <Alert>Date wajib diisi</Alert>}
+            <div className={styles.form__alert}>
+              {formError.year && <Alert>*Date wajib diisi</Alert>}
+            </div>
 
             <label className={styles.form__label}>Image :</label>
             <input
@@ -167,7 +176,9 @@ function AddMovieForm(props) {
               onChange={handleChange}
               placeholder="https://picsum.photos/300/400"
             />
-            {formError.image && <Alert>Link gambar wajib diisi</Alert>}
+            <div className={styles.form__alert}>
+              {formError.image && <Alert>*Link gambar wajib diisi</Alert>}
+            </div>
 
             <label className={styles.form__label}>Genre :</label>
             <select
@@ -188,7 +199,9 @@ function AddMovieForm(props) {
                 );
               })}
             </select>
-            {formError.type && <Alert>Genre wajib dipilih</Alert>}
+            <div className={styles.form__alert}>
+              {formError.type && <Alert>*Genre wajib dipilih</Alert>}
+            </div>
 
             <button className={styles.form__button} type="submit">
               Submit
