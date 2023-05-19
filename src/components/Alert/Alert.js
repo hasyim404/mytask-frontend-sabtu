@@ -10,11 +10,4 @@ function Alert(props) {
   );
 }
 
-<Alert>
-  {/* ini children */}
-  <img />
-  <h2>Oke</h2>
-  <p>Hai</p>
-</Alert>
-
 export default Alert;

@@ -6,60 +6,120 @@ import Alert from "../Alert/Alert";
 function AddMovieForm(props) {
   const { movies, setMovies } = props;
 
-  const [title, setTitle] = useState("");
-  const [isTitleError, setIsTitleError] = useState("");
-  const [date, setDate] = useState("");
-  const [isDateError, setIsDateError] = useState("");
-  const [image, setImage] = useState("");
-  const [isImageError, setIsImageError] = useState("");
-  const [type, setType] = useState("");
-  const [isTypeError, setIsTypeError] = useState("");
+  // State object
+  const [formData, setFormData] = useState({
+    title: "",
+    year: "",
+    image: "",
+    type: "",
+  });
+
+  // Fungsi handleChange semua input form
+  function handleChange(e) {
+    // console.log(e.target.name, e.target.value);
+    const { name, value } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+
+  /**
+   * TODO
+   * - PROBLEM: 1 ERROR 1 STATE.
+   * - TODO: REFACTOR SEMUA ERROR JADI 1 STATE.
+   */
+  const [formError, setFormError] = useState({
+    isTitleError: false,
+    isDateError: false,
+    isImageError: false,
+    isTypeError: false,
+  });
+
+  // Destructing
+  const { title, year, image, type } = formData;
 
   // Arr Option Movie
   const option = ["Movie", "Action", "Drama", "Horror", "Comedy"];
 
-  function handleInput(event) {
-    setTitle(event.target.value);
+  function validate() {
+    if (title === "") {
+      // setIsTitleError(true);
+      setFormError((err) => {
+        return {
+          ...err,
+          title: true,
+        };
+      });
+      return false;
+    } else if (year === "") {
+      // setIsDateError(true);
+      // setIsTitleError(false);
+      setFormError((err) => {
+        return {
+          ...err,
+          year: true,
+          title: false,
+        };
+      });
+      return false;
+    } else if (image === "") {
+      // setIsImageError(true);
+      // setIsDateError(false);
+      setFormError((err) => {
+        return {
+          ...err,
+          image: true,
+          year: false,
+        };
+      });
+      return false;
+    } else if (type === "") {
+      // setIsTypeError(true);
+      // setIsImageError(false);
+      setFormError((err) => {
+        return {
+          ...err,
+          type: true,
+          image: false,
+        };
+      });
+      return false;
+    } else {
+      // setIsTitleError(false);
+      // setIsDateError(false);
+      // setIsImageError(false);
+      // setIsTypeError(false);
+      setFormError((err) => {
+        return {
+          ...err,
+          title: false,
+          year: false,
+          image: false,
+          type: false,
+        };
+      });
+      return true;
+    }
   }
 
-  function handleDate(event) {
-    setDate(event.target.value);
-  }
+  function addMovie() {
+    const newMovie = {
+      id: nanoid(8),
+      title: title,
+      year: year,
+      type: type,
+      poster: image,
+    };
 
-  function handleImage(event) {
-    setImage(event.target.value);
-  }
-
-  function handleType(event) {
-    setType(event.target.value);
+    setMovies([...movies, newMovie]);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (title == "") {
-      setIsTitleError(true);
-    } else if (date == "") {
-      setIsDateError(true);
-    } else if (image == "") {
-      setIsImageError(true);
-    } else if (type == "") {
-      setIsTypeError(true);
-    } else {
-      const newMovie = {
-        id: nanoid(8),
-        title: title,
-        year: date,
-        type: type,
-        poster: image,
-      };
-
-      setMovies([...movies, newMovie]);
-      setIsTitleError(false);
-      setIsDateError(false);
-      setIsImageError(false);
-      setIsTypeError(false);
-    }
+    validate() && addMovie();
   }
 
   return (
@@ -82,9 +142,9 @@ function AddMovieForm(props) {
               type="text"
               id="title"
               value={title}
-              onChange={handleInput}
+              onChange={handleChange}
             />
-            {isTitleError && <Alert>Title wajib diisi</Alert>}
+            {formError.title && <Alert>Title wajib diisi</Alert>}
 
             <label className={styles.form__label}>Year :</label>
             <input
@@ -92,10 +152,10 @@ function AddMovieForm(props) {
               className={styles.form__input}
               type="text"
               id="date"
-              value={date}
-              onChange={handleDate}
+              value={year}
+              onChange={handleChange}
             />
-            {isDateError && <Alert>Date wajib diisi</Alert>}
+            {formError.year && <Alert>Date wajib diisi</Alert>}
 
             <label className={styles.form__label}>Image :</label>
             <input
@@ -104,10 +164,10 @@ function AddMovieForm(props) {
               type="text"
               id="image"
               value={image}
-              onChange={handleImage}
+              onChange={handleChange}
               placeholder="https://picsum.photos/300/400"
             />
-            {isImageError && <Alert>Link gambar wajib diisi</Alert>}
+            {formError.image && <Alert>Link gambar wajib diisi</Alert>}
 
             <label className={styles.form__label}>Genre :</label>
             <select
@@ -115,7 +175,7 @@ function AddMovieForm(props) {
               name="type"
               id="type"
               defaultValue={""}
-              onChange={handleType}
+              onChange={handleChange}
             >
               <option value={""} disabled>
                 Pilih Tipe Movie
@@ -128,7 +188,7 @@ function AddMovieForm(props) {
                 );
               })}
             </select>
-            {isTypeError && <Alert>Genre wajib dipilih</Alert>}
+            {formError.type && <Alert>Genre wajib dipilih</Alert>}
 
             <button className={styles.form__button} type="submit">
               Submit

@@ -6,19 +6,18 @@ import NowPlaying from "./pages/movie/NowPlaying";
 import TopRated from "./pages/movie/TopRated";
 import Layout from "./Layout/Layout";
 
-
 function App() {
   return (
     <>
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/movie/create" element={<CreateMovie/>}></Route>
-        <Route path="/movie/populer" element={<Populer/>}></Route>
-        <Route path="/movie/now-playing" element={<NowPlaying/>}></Route>
-        <Route path="/movie/top-rated" element={<TopRated/>}></Route>
-      </Routes>
-    </Layout>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/movie/create" element={<CreateMovie />}></Route>
+          <Route path="/movie/populer" element={<Populer />}></Route>
+          <Route path="/movie/now-playing" element={<NowPlaying />}></Route>
+          <Route path="/movie/top-rated" element={<TopRated />}></Route>
+        </Routes>
+      </Layout>
     </>
   );
 }
