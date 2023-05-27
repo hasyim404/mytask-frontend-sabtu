@@ -1,11 +1,29 @@
 import styled, { css } from "styled-components";
 
 const Button = styled.button`
-  padding: 0.8rem 2rem;
+  /* padding: 0.8rem 2rem; */
   border: none;
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
+
+  /* Tangkap prop padding */
+  padding: ${function (props) {
+    if (props.size) {
+      return props.theme.paddingBtn[props.size];
+    } else {
+      return props.theme.paddingBtn.md;
+    }
+  }};
+
+  /* Tangkap prop font-size */
+  font-size: ${function (props) {
+    if (props.size) {
+      return props.theme.fontSizeBtn[props.size];
+    } else {
+      return props.theme.fontSizeBtn.md;
+    }
+  }};
 
   /* Tangkap props variant */
   background-color: ${function (props) {
@@ -17,10 +35,10 @@ const Button = styled.button`
   }};
 
   /* 
-   * Hover button / 
-   * -------------
-   * sudo selector 
-   */
+  * Hover button / 
+  * -------------
+  * sudo selector 
+  */
   &:hover {
     background-color: ${function (props) {
       if (props.variant) {

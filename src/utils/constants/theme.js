@@ -1,5 +1,5 @@
 const theme = {
-  // Tema color
+  // Tema color button
   colors: {
     primary: "#3498db",
     secondary: "#95a5a6",
@@ -17,9 +17,17 @@ const theme = {
     success: "#27ae60",
   },
 
-  // Another Tema
-  size: {
-    sm: {},
+  // Tema button
+  fontSizeBtn: {
+    sm: "0.8rem",
+    md: "1rem",
+    lg: "1.3rem",
+  },
+
+  paddingBtn: {
+    sm: "0.2rem 0.5rem",
+    md: "0.5rem 1rem",
+    lg: "0.5rem 2rem",
   },
 };
 

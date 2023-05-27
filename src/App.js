@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+
 import Home from "./pages/Home";
 import CreateMovie from "./pages/movie/CreateMovie";
 import Populer from "./pages/movie/Populer";

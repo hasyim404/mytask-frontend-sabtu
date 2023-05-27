@@ -28,7 +28,9 @@ const Hero = () => {
           <h3 className="hero__genre">Genre: {movie.Genre}</h3>
           <p className="hero__description">{movie.Plot}</p>
           {/* <button className=hero__button}>Watch</button> */}
-          <Button variant="success">Watch</Button>
+          <Button variant="success" size="lg">
+            Watch
+          </Button>
         </div>
         <div className="hero__right">
           <img className="hero__image" src={movie.Poster} alt="" />

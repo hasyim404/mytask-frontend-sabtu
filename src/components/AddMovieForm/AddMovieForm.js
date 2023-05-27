@@ -204,7 +204,7 @@ function AddMovieForm(props) {
               <>{formError.type && <p>*Genre wajib dipilih</p>}</>
             </Alert>
 
-            <Button variant="primary" full>
+            <Button variant="primary" size="md" full>
               Submit
             </Button>
           </form>
