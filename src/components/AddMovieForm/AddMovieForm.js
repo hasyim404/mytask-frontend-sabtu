@@ -1,8 +1,12 @@
 import { useState } from "react";
-import styles from "./AddMovieForm.module.css";
+// import styles from "./AddMovieForm.module.css";
 import { nanoid } from "nanoid";
+
 import Alert from "../Alert/Alert";
+import Container from "../Container/Container";
 import Button from "../ui/Button";
+
+import StyledMovieForm from "./AddMovieForm.styled";
 
 function AddMovieForm(props) {
   const { movies, setMovies } = props;
@@ -26,11 +30,7 @@ function AddMovieForm(props) {
     });
   }
 
-  /**
-   * TODO
-   * - PROBLEM: 1 ERROR 1 STATE.
-   * - TODO: REFACTOR SEMUA ERROR JADI 1 STATE.
-   */
+  // 1 Error 1 State
   const [formError, setFormError] = useState({
     isTitleError: false,
     isDateError: false,
@@ -124,66 +124,66 @@ function AddMovieForm(props) {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.form}>
+    <Container>
+      <StyledMovieForm>
         {/* Left */}
-        <div className={styles.form__left}>
+        <div className="form__left">
           <img
-            className={styles.form__img}
+            className="form__img"
             src="https://picsum.photos/536/354"
             alt=""
           />
         </div>
 
         {/* Right */}
-        <div className={styles.form__right}>
-          <h4 className={styles.form__title}>Add Movie</h4>
+        <div className="form__right">
+          <h4 className="form__title">Add Movie</h4>
 
           {/* Form */}
-          <form action="" className={styles.form__area} onSubmit={handleSubmit}>
-            <label className={styles.form__label}>Title :</label>
+          <form action="" className="form__area" onSubmit={handleSubmit}>
+            <label className="form__label">Title :</label>
             <input
               name="title"
-              className={styles.form__input}
+              className="form__input"
               type="text"
               id="title"
               value={title}
               onChange={handleChange}
             />
-            <div className={styles.form__alert}>
-              {formError.title && <Alert>*Title wajib diisi</Alert>}
-            </div>
+            <Alert>
+              <>{formError.title && <p>*Title wajib diisi</p>}</>
+            </Alert>
 
-            <label className={styles.form__label}>Year :</label>
+            <label className="form__label">Year :</label>
             <input
               name="year"
-              className={styles.form__input}
+              className="form__input"
               type="text"
               id="date"
               value={year}
               onChange={handleChange}
             />
-            <div className={styles.form__alert}>
-              {formError.year && <Alert>*Date wajib diisi</Alert>}
-            </div>
+            <Alert>
+              <>{formError.year && <p>*Date wajib diisi</p>}</>
+            </Alert>
 
-            <label className={styles.form__label}>Image :</label>
+            <label className="form__label">Image :</label>
             <input
               name="image"
-              className={styles.form__input}
+              className="form__input"
               type="text"
               id="image"
               value={image}
               onChange={handleChange}
               placeholder="https://picsum.photos/300/400"
             />
-            <div className={styles.form__alert}>
-              {formError.image && <Alert>*Link gambar wajib diisi</Alert>}
-            </div>
+            <Alert>
+              <>{formError.image && <p>*Link gambar wajib diisi</p>}</>
+            </Alert>
 
-            <label className={styles.form__label}>Genre :</label>
+            <label className="form__label">Genre :</label>
             <select
-              className={styles.form__select}
+              className="form__select"
               name="type"
               id="type"
               defaultValue={""}
@@ -200,20 +200,17 @@ function AddMovieForm(props) {
                 );
               })}
             </select>
-            <div className={styles.form__alert}>
-              {formError.type && <Alert>*Genre wajib dipilih</Alert>}
-            </div>
+            <Alert>
+              <>{formError.type && <p>*Genre wajib dipilih</p>}</>
+            </Alert>
 
-            {/* <button className={styles.form__button} type="submit">
-              Submit
-            </button> */}
             <Button variant="primary" full>
               Submit
             </Button>
           </form>
         </div>
-      </div>
-    </div>
+      </StyledMovieForm>
+    </Container>
   );
 }
 

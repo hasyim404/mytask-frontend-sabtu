@@ -1,15 +1,15 @@
-import styles from "./Footer.module.css";
+import StyledFooter from "./Footer.styled";
 
 const Footer = () => {
   return (
-    <div className={styles.container}>
-      <footer className={styles.footer}>
-        <h2 className={styles.footer__title}>Movie App</h2>
-        <p className={styles.footer__author}>
+    <StyledFooter>
+      <footer className="footer">
+        <h2 className="footer__title">Movie App</h2>
+        <p className="footer__author">
           <a href="https://github.com/hasyim404">@hasyim404</a>
         </p>
       </footer>
-    </div>
+    </StyledFooter>
   );
 };
 

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import styles from "./Hero.module.css";
+
+import Container from "../Container/Container";
 import Button from "../ui/Button";
+import StyledHero from "./Hero.styled";
 
 const Hero = () => {
   const [movie, setMovie] = useState("");
@@ -19,20 +21,20 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.hero}>
-        <div className={styles.hero__left}>
-          <h2 className={styles.hero__title}>{movie.Title}</h2>
-          <h3 className={styles.hero__genre}>Genre: {movie.Genre}</h3>
-          <p className={styles.hero__description}>{movie.Plot}</p>
-          {/* <button className={styles.hero__button}>Watch</button> */}
+    <Container>
+      <StyledHero>
+        <div className="hero__left">
+          <h2 className="hero__title">{movie.Title}</h2>
+          <h3 className="hero__genre">Genre: {movie.Genre}</h3>
+          <p className="hero__description">{movie.Plot}</p>
+          {/* <button className=hero__button}>Watch</button> */}
           <Button variant="success">Watch</Button>
         </div>
-        <div className={styles.hero__right}>
-          <img className={styles.hero__image} src={movie.Poster} alt="" />
+        <div className="hero__right">
+          <img className="hero__image" src={movie.Poster} alt="" />
         </div>
-      </div>
-    </div>
+      </StyledHero>
+    </Container>
   );
 };
 

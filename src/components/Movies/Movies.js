@@ -1,8 +1,8 @@
 import Movie from "../Movie/Movie";
-import styles from "./Movies.module.css";
+import StyledMovies from "./Movies.styled";
+
 // data movies
 // import data from "../../utils/constants/data";
-// import { useState } from "react";
 import { nanoid } from "nanoid";
 
 const Movies = (props) => {
@@ -12,7 +12,7 @@ const Movies = (props) => {
   const tambahFilm = () => {
     const movie = {
       id: nanoid(10),
-      title: "Spiral Abyss",
+      title: "Test_Image",
       year: "2023",
       type: "Movie",
       poster: "https://picsum.photos/300/400",
@@ -24,10 +24,10 @@ const Movies = (props) => {
   };
 
   return (
-    <div className={styles.container}>
-      <section className={styles.movies}>
-        <h2 className={styles.movies__title}>Latest Movies</h2>
-        <div className={styles.movie__container}>
+    <StyledMovies>
+      <section className="movies">
+        <h2 className="movies__title">Latest Movies</h2>
+        <div className="movie__container">
           {/* Looping data movie & render, kirim */}
 
           {movies.map(function (movie) {
@@ -38,7 +38,7 @@ const Movies = (props) => {
         {/* Tambah event on Click */}
         <button onClick={tambahFilm}>Add Movie</button>
       </section>
-    </div>
+    </StyledMovies>
   );
 };
 
