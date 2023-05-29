@@ -8,29 +8,19 @@ const StyledMovieForm = styled.div`
   justify-content: center;
 
   .form__title {
-    color: #4361ee;
-    text-align: center;
-    margin-bottom: -1rem;
-    font-size: 2.5rem;
-  }
-
-  .form__area {
-    margin: 2rem 0;
-    text-align: left;
+    margin-bottom: 2rem;
   }
 
   .form__label {
-    display: block;
-    margin-bottom: 0.5rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
   }
 
   .form__select,
-  .form__input,
-  .form__input:active,
-  .form__input:focus {
-    margin-bottom: 0.8rem;
+  .form__input {
+    margin-bottom: 0.6rem;
     width: 100%;
-    padding: 0.4rem 0;
+    padding: 0.5rem;
     border: 2px solid #4361ee;
     outline: none;
     border-radius: 10px;
@@ -38,6 +28,10 @@ const StyledMovieForm = styled.div`
 
   .form__img {
     display: none;
+  }
+
+  .form__button {
+    margin-top: 2rem;
   }
 
   /* Medium Screen */
@@ -49,8 +43,8 @@ const StyledMovieForm = styled.div`
     .form__img {
       display: block;
       max-width: 100%;
-      margin-left: 4rem;
-      border-radius: 10px;
+      margin-top: 15%;
+      margin-left: 10%;
     }
 
     .form__left {
@@ -62,28 +56,22 @@ const StyledMovieForm = styled.div`
     }
 
     .form__area {
-      padding: 0 6rem;
+      padding: 0 7rem;
     }
   }
 
   /* Large Screen */
   @media (min-width: 992px) {
-    .form__title {
-      font-size: 3rem;
-    }
-
     .form__img {
       display: block;
-      max-width: 80%;
-      /* margin-left: 15rem; */
     }
 
     .form__right {
-      margin-left: -5rem;
+      padding: 0 4rem;
     }
 
     .form__area {
-      padding: 0 14rem;
+      padding: 0 auto;
     }
   }
 `;

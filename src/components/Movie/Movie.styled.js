@@ -4,15 +4,12 @@ const StyledMovie = styled.div`
   margin-bottom: 1rem;
 
   .movie__image {
-    border-radius: 25px;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .movie__title {
     color: #4361ee;
-    font-size: 1.95rem;
+    font-size: 1.7rem;
     margin-bottom: 0.5rem;
   }
 
@@ -23,8 +20,8 @@ const StyledMovie = styled.div`
 
   .movie__type {
     color: #b5179e;
-    margin: -13px 0 5px 0;
-    font-size: 1.2rem;
+    margin: -10px 0 5px 0;
+    font-size: 1.1rem;
     text-transform: capitalize;
   }
 

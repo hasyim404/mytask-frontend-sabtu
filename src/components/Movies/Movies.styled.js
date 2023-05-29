@@ -10,9 +10,7 @@ const StyledMovies = styled.div`
   }
 
   .movies__title {
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-    color: #4361ee;
+    margin-bottom: 2rem;
   }
 
   .movie__container {
@@ -56,10 +54,6 @@ const StyledMovies = styled.div`
     .movie {
       flex-basis: 25%;
       padding: 1rem;
-    }
-
-    .movies__title {
-      font-size: 3rem;
     }
   }
 `;

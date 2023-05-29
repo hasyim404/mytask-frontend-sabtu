@@ -1,36 +1,42 @@
 import styled, { css } from "styled-components";
 
 const Button = styled.button`
-  /* padding: 0.8rem 2rem; */
   border: none;
   border-radius: 10px;
-  color: #fff;
   cursor: pointer;
 
-  /* Tangkap prop padding */
-  padding: ${function (props) {
-    if (props.size) {
-      return props.theme.paddingBtn[props.size];
+  /* Tangkap prop fontColor */
+  color: ${function (props) {
+    if (props.fontColor) {
+      return props.theme.colors[props.fontColor].main;
     } else {
-      return props.theme.paddingBtn.md;
+      return props.theme.colors.light.main;
     }
   }};
 
-  /* Tangkap prop font-size */
+  /* Tangkap prop size */
+  padding: ${function (props) {
+    if (props.size) {
+      return props.theme.buttons[props.size].padding;
+    } else {
+      return props.theme.buttons.md.padding;
+    }
+  }};
+
   font-size: ${function (props) {
     if (props.size) {
-      return props.theme.fontSizeBtn[props.size];
+      return props.theme.buttons[props.size].fontSize;
     } else {
-      return props.theme.fontSizeBtn.md;
+      return props.theme.buttons.md.fontSize;
     }
   }};
 
   /* Tangkap props variant */
   background-color: ${function (props) {
     if (props.variant) {
-      return props.theme.colors[props.variant];
+      return props.theme.colors[props.variant].main;
     } else {
-      return props.theme.colors.primary;
+      return props.theme.colors.primary.main;
     }
   }};
 
@@ -42,9 +48,9 @@ const Button = styled.button`
   &:hover {
     background-color: ${function (props) {
       if (props.variant) {
-        return props.theme.colorHover[props.variant];
+        return props.theme.colors[props.variant].hover;
       } else {
-        return props.theme.colorHover.primary;
+        return props.theme.colors.primary.hover;
       }
     }};
   }

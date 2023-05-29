@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Container from "../Container/Container";
 import Button from "../ui/Button";
 import StyledHero from "./Hero.styled";
+import { Heading, Paragraph } from "../ui/Typography";
+import Image from "../ui/Media";
 
 const Hero = () => {
   const [movie, setMovie] = useState("");
@@ -24,16 +26,20 @@ const Hero = () => {
     <Container>
       <StyledHero>
         <div className="hero__left">
-          <h2 className="hero__title">{movie.Title}</h2>
+          <Heading className="hero__title" fontColor="blue">
+            {movie.Title}
+          </Heading>
           <h3 className="hero__genre">Genre: {movie.Genre}</h3>
-          <p className="hero__description">{movie.Plot}</p>
-          {/* <button className=hero__button}>Watch</button> */}
-          <Button variant="success" size="lg">
+          <Paragraph className="hero__description" fontColor="gray">
+            {movie.Plot}
+          </Paragraph>
+          <Button variant="success" size="lg" fontColor="light">
             Watch
           </Button>
         </div>
         <div className="hero__right">
-          <img className="hero__image" src={movie.Poster} alt="" />
+          <Image src={movie.Poster} rounded />
+          {/* <img className="hero__image" src={movie.Poster} alt="" /> */}
         </div>
       </StyledHero>
     </Container>

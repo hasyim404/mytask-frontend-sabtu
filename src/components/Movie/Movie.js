@@ -1,4 +1,5 @@
 import StyledMovie from "./Movie.styled";
+import Image from "../ui/Media";
 
 const Movie = (props) => {
   // Destructing obj props
@@ -6,7 +7,13 @@ const Movie = (props) => {
 
   return (
     <StyledMovie>
-      <img className="movie__image" src={movie.poster} alt="" />
+      <Image
+        className="movie__image"
+        thumbnail
+        borderColor="blue"
+        src={movie.poster}
+      />
+      {/* <img className="movie__image" src={movie.poster} alt="" /> */}
       <h3 className="movie__title">{movie.title}</h3>
       <p className="movie__type">Type: {movie.type}</p>
       <p className="movie__date">{movie.year}</p>

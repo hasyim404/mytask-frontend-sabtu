@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import styles from "./AddMovieForm.module.css";
 import { nanoid } from "nanoid";
 
 import Alert from "../Alert/Alert";
@@ -7,6 +6,9 @@ import Container from "../Container/Container";
 import Button from "../ui/Button";
 
 import StyledMovieForm from "./AddMovieForm.styled";
+import { Form, Label, Input } from "../ui/Form";
+import { Heading } from "../ui/Typography";
+import Image from "../ui/Media";
 
 function AddMovieForm(props) {
   const { movies, setMovies } = props;
@@ -128,47 +130,60 @@ function AddMovieForm(props) {
       <StyledMovieForm>
         {/* Left */}
         <div className="form__left">
-          <img
+          <Image
             className="form__img"
             src="https://picsum.photos/536/354"
-            alt=""
+            rounded
           />
         </div>
 
         {/* Right */}
         <div className="form__right">
-          <h4 className="form__title">Add Movie</h4>
-
           {/* Form */}
-          <form action="" className="form__area" onSubmit={handleSubmit}>
-            <label className="form__label">Title :</label>
-            <input
+          <Form action="" className="form__area" onSubmit={handleSubmit}>
+            <Heading className="form__title" fontColor="blue" centered>
+              Add Movie
+            </Heading>
+
+            {/* Title */}
+            <Label className="form__label" block={true}>
+              Title :
+            </Label>
+            <Input
               name="title"
               className="form__input"
               type="text"
               id="title"
               value={title}
               onChange={handleChange}
+              borderColor="blue"
             />
             <Alert>
-              <>{formError.title && <p>*Title wajib diisi</p>}</>
+              <>{formError.title && "*Title wajib diisi"}</>
             </Alert>
 
-            <label className="form__label">Year :</label>
-            <input
+            {/* Year */}
+            <Label className="form__label" block={true}>
+              Year :
+            </Label>
+            <Input
               name="year"
               className="form__input"
               type="text"
               id="date"
               value={year}
               onChange={handleChange}
+              borderColor="blue"
             />
             <Alert>
-              <>{formError.year && <p>*Date wajib diisi</p>}</>
+              <>{formError.year && "*Date wajib diisi"}</>
             </Alert>
 
-            <label className="form__label">Image :</label>
-            <input
+            {/* Image */}
+            <Label className="form__label" block={true}>
+              Image :
+            </Label>
+            <Input
               name="image"
               className="form__input"
               type="text"
@@ -176,12 +191,16 @@ function AddMovieForm(props) {
               value={image}
               onChange={handleChange}
               placeholder="https://picsum.photos/300/400"
+              borderColor="blue"
             />
             <Alert>
-              <>{formError.image && <p>*Link gambar wajib diisi</p>}</>
+              <>{formError.image && "*Link gambar wajib diisi"}</>
             </Alert>
 
-            <label className="form__label">Genre :</label>
+            {/* Genre */}
+            <Label className="form__label" block={true}>
+              Genre :
+            </Label>
             <select
               className="form__select"
               name="type"
@@ -201,13 +220,13 @@ function AddMovieForm(props) {
               })}
             </select>
             <Alert>
-              <>{formError.type && <p>*Genre wajib dipilih</p>}</>
+              <>{formError.type && "*Genre wajib dipilih"}</>
             </Alert>
 
-            <Button variant="primary" size="md" full>
+            <Button className="form__button" variant="primary" size="md" full>
               Submit
             </Button>
-          </form>
+          </Form>
         </div>
       </StyledMovieForm>
     </Container>

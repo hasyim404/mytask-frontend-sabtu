@@ -1,5 +1,7 @@
 import Movie from "../Movie/Movie";
 import StyledMovies from "./Movies.styled";
+import { Heading } from "../ui/Typography";
+import Button from "../ui/Button";
 
 // data movies
 // import data from "../../utils/constants/data";
@@ -26,7 +28,9 @@ const Movies = (props) => {
   return (
     <StyledMovies>
       <section className="movies">
-        <h2 className="movies__title">Latest Movies</h2>
+        <Heading className="movies__title" fontColor="blue">
+          Latest Movies
+        </Heading>
         <div className="movie__container">
           {/* Looping data movie & render, kirim */}
 
@@ -36,7 +40,9 @@ const Movies = (props) => {
         </div>
 
         {/* Tambah event on Click */}
-        <button onClick={tambahFilm}>Add Movie</button>
+        <Button onClick={tambahFilm} size="sm">
+          Add Movie
+        </Button>
       </section>
     </StyledMovies>
   );

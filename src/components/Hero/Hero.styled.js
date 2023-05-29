@@ -11,20 +11,17 @@ const StyledHero = styled.div`
   }
 
   .hero__title {
-    color: #4361ee;
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero__genre {
     color: #b5179e;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-size: 1.2rem;
   }
 
   .hero__description {
-    color: #64748b;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .hero__button {
@@ -37,12 +34,6 @@ const StyledHero = styled.div`
     transition: all 0.5s;
     cursor: pointer;
     font-size: 1.1rem;
-  }
-
-  .hero__image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 25px;
   }
 
   /* Medium Screen */
@@ -80,22 +71,8 @@ const StyledHero = styled.div`
       text-align: right;
     }
 
-    .hero__title {
-      font-size: 2.5rem;
-    }
-
     .hero__genre {
       font-size: 1.3rem;
-    }
-
-    .hero__description {
-      font-size: 1.2rem;
-    }
-
-    .hero__image {
-      max-width: 80%;
-      height: auto;
-      border-radius: 25px;
     }
   }
 `;
