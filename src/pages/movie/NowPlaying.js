@@ -9,14 +9,14 @@ function NowPlaying() {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`;
 
-  async function fetchPopularMovies() {
+  async function fetchNowPlaying() {
     const response = await axios(URL);
 
     setMovies(response.data.results);
   }
 
   useEffect(function () {
-    fetchPopularMovies();
+    fetchNowPlaying();
   }, []);
 
   return (
