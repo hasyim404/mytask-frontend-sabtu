@@ -22,7 +22,7 @@ function PopulerMovies() {
   return (
     <div>
       {/* <h2>Populer Movies</h2> */}
-      <Movies movies={movies} setMovies={setMovies} />
+      <Movies setTitle="Popular" movies={movies} setMovies={setMovies} />
     </div>
   );
 }
