@@ -11,7 +11,7 @@ const Movie = (props) => {
       <Link to={`/movie/${movie.id}`}>
         <Image
           className="movie__image"
-          thumbnail
+          rounded
           borderColor="blue"
           src={
             movie.poster ||

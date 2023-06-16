@@ -12,7 +12,7 @@ const Main = () => {
     <main>
       {/* <Counter /> */}
       <Hero />
-      <Movies setTitle="Latest Movies" movies={movies} setMovies={setMovies} />
+      <Movies title="Latest Movies" movies={movies} setMovies={setMovies} />
       <AddMovieForm movies={movies} setMovies={setMovies} />
     </main>
   );

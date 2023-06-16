@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import Movies from "../../components/Movies/Movies";
+import ENDPOINTS from "../../utils/constants/endpoints";
+import Hero from "../../components/Hero/Hero";
 
 function TopRated() {
   const [movies, setMovies] = useState([]);
 
-  const API_KEY = process.env.REACT_APP_API_KEY;
-  const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
-
   async function fetchTopRated() {
-    const response = await axios(URL);
+    const response = await axios(ENDPOINTS.TOP_RATED);
 
     setMovies(response.data.results);
   }
@@ -21,8 +20,7 @@ function TopRated() {
 
   return (
     <div>
-      {/* <h2>Populer Movies</h2> */}
-      <Movies setTitle="Top Rated" movies={movies} setMovies={setMovies} />
+      <Movies title="Top Rated" movies={movies} setMovies={setMovies} />
     </div>
   );
 }

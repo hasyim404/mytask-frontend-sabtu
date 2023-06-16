@@ -4,6 +4,7 @@ const Button = styled.button`
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  text-decoration: none;
 
   /* Tangkap prop fontColor */
   color: ${function (props) {

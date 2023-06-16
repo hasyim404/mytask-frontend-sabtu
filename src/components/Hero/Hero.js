@@ -6,32 +6,26 @@ import Button from "../ui/Button";
 import StyledHero from "./Hero.styled";
 import { Heading, Paragraph } from "../ui/Typography";
 import Image from "../ui/Media";
+import ENDPOINTS from "../../utils/constants/endpoints";
 
 const Hero = () => {
   const [movie, setMovie] = useState("");
-  const API_KEY = process.env.REACT_APP_API_KEY;
 
-  const randomResult = Math.floor(Math.random() * (19 - 0 + 1)) + 0;
   const genre = movie && movie.genres.map((genre) => genre.name).join(", ");
   const trailer =
     movie && `https://youtube.com/watch?v=${movie.videos.results[0].key}`;
 
-  console.log(`random res: ${randomResult}`);
-  console.log(`random res: ${trailer}`);
-
   async function fetchTrendingMovie() {
-    const URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
-    const response = await axios(URL);
+    const response = await axios(ENDPOINTS.HERO);
 
-    return response.data.results[randomResult];
+    return response.data.results[0];
   }
 
   async function getDetailMovie() {
     const trendingMovie = await fetchTrendingMovie();
     const id = trendingMovie.id;
 
-    const URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
-    const response = await axios(URL);
+    const response = await axios(ENDPOINTS.DETAIL(id));
 
     setMovie(response.data);
   }
@@ -65,7 +59,7 @@ const Hero = () => {
         <div className="hero__right">
           {/* <Image src={movie.Poster} rounded /> */}
           <Image
-            src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
             rounded
             alt="placeholder"
           />

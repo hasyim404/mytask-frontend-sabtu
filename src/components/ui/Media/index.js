@@ -9,7 +9,7 @@ const Image = styled.img`
         max-width: 100%;
         height: auto;
         border-radius: 25px;
-
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         @media (min-width: 992px) {
           max-width: 80%;
         }

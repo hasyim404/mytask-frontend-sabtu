@@ -8,7 +8,7 @@ import Button from "../ui/Button";
 import { nanoid } from "nanoid";
 
 const Movies = (props) => {
-  const { movies, setMovies, setTitle } = props;
+  const { movies, setMovies, title } = props;
 
   // Fungsi tambah film
   const tambahFilm = () => {
@@ -29,7 +29,7 @@ const Movies = (props) => {
     <StyledMovies>
       <section className="movies">
         <Heading className="movies__title" fontColor="blue">
-          {setTitle}
+          {title}
         </Heading>
         <div className="movie__container">
           {/* Looping data movie & render, kirim */}

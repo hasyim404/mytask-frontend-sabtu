@@ -3,13 +3,21 @@ import styled from "styled-components";
 const StyledMovie = styled.div`
   margin-bottom: 1rem;
 
+  a {
+    text-decoration: none;
+  }
+
   .movie__image {
     margin-bottom: 0.5rem;
   }
 
+  .movie__image:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+  }
+
   .movie__title {
     color: #4361ee;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
 
