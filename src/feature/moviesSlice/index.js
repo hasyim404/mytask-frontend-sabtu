@@ -8,7 +8,10 @@ const movieSlice = createSlice({
     movies: data,
   },
   reducers: {
-    addMovies(state, action) {},
+    addMovies(state, action) {
+      // add movie to movies
+      state.movies.push(action.payload);
+    },
   },
 });
 

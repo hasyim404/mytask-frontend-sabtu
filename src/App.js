@@ -8,17 +8,11 @@ import TopRated from "./pages/movie/TopRated";
 import Layout from "./Layout/Layout";
 import Detail from "./pages/movie/Detail";
 
-import { useState } from "react";
-import data from "./utils/constants/data";
-
 // ThemeProvider
 import { ThemeProvider } from "styled-components";
 import theme from "./utils/constants/theme";
 
 function App() {
-  // Lifting state movies
-  // const [movies, setMovies] = useState(data);
-
   return (
     <>
       <ThemeProvider theme={theme}>

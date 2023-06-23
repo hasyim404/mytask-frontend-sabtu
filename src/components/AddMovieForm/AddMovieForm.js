@@ -11,9 +11,11 @@ import { Heading } from "../ui/Typography";
 import Image from "../ui/Media";
 
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addMovies } from "../../feature/moviesSlice";
 
-function AddMovieForm(props) {
-  const { movies, setMovies } = props;
+function AddMovieForm() {
+  const dispatch = useDispatch();
   const navigation = useNavigate();
 
   // State object
@@ -110,7 +112,7 @@ function AddMovieForm(props) {
     }
   }
 
-  function addMovie() {
+  function submitMovie() {
     const newMovie = {
       id: nanoid(8),
       title: title,
@@ -119,14 +121,14 @@ function AddMovieForm(props) {
       poster: image,
     };
 
-    setMovies([...movies, newMovie]);
+    dispatch(addMovies(newMovie));
     navigation("/");
   }
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    validate() && addMovie();
+    validate() && submitMovie();
   }
 
   return (
