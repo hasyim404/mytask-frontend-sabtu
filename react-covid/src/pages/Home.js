@@ -1,6 +1,4 @@
-import Footer from "../components/Footer";
 import { Hero } from "../components/Hero";
-import { Navbar } from "../components/Navbar";
 import Globals from "../components/Globals";
 import { useState } from "react";
 import Provinces from "../components/Provinces";
@@ -25,9 +23,9 @@ function Main() {
 function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Main />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
