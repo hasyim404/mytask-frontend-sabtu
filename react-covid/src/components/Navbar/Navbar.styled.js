@@ -13,9 +13,9 @@ const StyledNavbar = styled.div`
     flex-direction: column;
   }
 
-  .navbar__brand {
-    font-size: 2.4rem;
-    margin-bottom: -2rem;
+  .navbar a {
+    text-decoration: none;
+    color: white;
   }
 
   .navbar__list {
@@ -38,6 +38,11 @@ const StyledNavbar = styled.div`
     margin-left: -2rem;
   }
 
+  .navbar__item a {
+    text-decoration: none;
+    color: white;
+  }
+
   /* Medium Screen */
   @media (min-width: 768px) {
     .container {
@@ -47,10 +52,6 @@ const StyledNavbar = styled.div`
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-    }
-
-    .navbar__brand {
-      margin-bottom: 0;
     }
 
     .navbar__list {
@@ -67,10 +68,6 @@ const StyledNavbar = styled.div`
   @media (min-width: 992px) {
     .navbar {
       padding: 0 5.5rem;
-    }
-
-    .navbar__brand {
-      font-size: 2.4rem;
     }
 
     .navbar__item {

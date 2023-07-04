@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
 
 import StyledNavbar from "./Navbar.styled";
+import { WebTitle } from "../ui/Typography";
 
 function Navbar() {
   return (
     <StyledNavbar>
       <div className="container">
         <nav className="navbar">
-          <div className="navbar__brand">
-            <h4>Covid ID</h4>
-            {/* <p className={""}>
-              <a href="https://github.com/hasyim404/mytask-frontend-sabtu"></a>
-            </p> */}
-          </div>
+          {/* klo fontColor diubah gk ngaruh karena ketimpa sama <Link/>, tapi work */}
+          <WebTitle fontColor="white">
+            <Link to="/">Covid ID</Link>
+          </WebTitle>
+
+          {/* normal */}
+          {/* <WebTitle fontColor="danger">Covid ID</WebTitle> */}
           <div>
             <ul className="navbar__list">
               <li className="navbar__item">

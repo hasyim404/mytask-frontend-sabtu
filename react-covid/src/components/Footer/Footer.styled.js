@@ -38,6 +38,11 @@ const StyledFooter = styled.div`
     margin-left: -2rem;
   }
 
+  .footer__item a {
+    text-decoration: none;
+    color: white;
+  }
+
   .footer__for_foot {
     font-size: 1.3rem;
     margin-top: -3rem;

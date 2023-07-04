@@ -1,6 +1,10 @@
-// import styles from "./Hero.module.css";
+import { Link } from "react-router-dom";
+
 import StyledHero from "./Hero.styled";
 import hero_img from "../../assets/img/hero_img.svg";
+import { Heading, Sub, Desc } from "../ui/Typography";
+import Button from "../ui/Button";
+import Image from "../ui/Image";
 
 function Hero() {
   return (
@@ -9,25 +13,26 @@ function Hero() {
         <div className="hero">
           {/* Left */}
           <div className="hero__left">
-            <h2 className="hero__title">Covid ID</h2>
-            <p className="hero__sub_title">Monitoring Perkembangan Covid</p>
+            <Heading>Covid ID</Heading>
+            <Sub fontColor="secondary">Monitoring Perkembangan Covid</Sub>
 
-            <p className="hero__description">
+            <Desc fontColor="gray">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius
               nostrum voluptate corrupti magni velit vel laborum recusandae cum.
               Expedita fugit ducimus tempore! Assumenda veritatis eaque quod
               ipsa exercitationem labore cumque.
-            </p>
-            <a href="#!">
-              <button className="hero__button">
+            </Desc>
+
+            <Link to="/">
+              <Button shadowBox>
                 <span>Vaccine </span>
-              </button>
-            </a>
+              </Button>
+            </Link>
           </div>
 
           {/* Right */}
           <div className="hero__right">
-            <img className="hero__image" src={hero_img} alt="img" />
+            <Image variant="lg" src={hero_img} alt="img" />
           </div>
         </div>
       </div>

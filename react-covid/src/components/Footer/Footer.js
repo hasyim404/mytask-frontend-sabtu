@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import StyledFooter from "./Footer.styled";
+import { WebTitle } from "../ui/Typography";
 
 function Footer() {
   return (
@@ -8,7 +9,7 @@ function Footer() {
       <div className="container">
         <nav className="footer">
           <div className="footer__brand">
-            <h4>Covid ID</h4>
+            <WebTitle fontColor="white">Covid ID</WebTitle>
             <p className="footer__for_foot">
               Develope By&nbsp;
               <a href="https://github.com/hasyim404/mytask-frontend-sabtu">

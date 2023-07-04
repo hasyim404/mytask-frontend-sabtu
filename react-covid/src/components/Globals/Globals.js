@@ -1,5 +1,7 @@
-import StyledGlobals from "./Globals.styled";
 import Global from "../Global/Global";
+
+import StyledGlobals from "./Globals.styled";
+import { Heading, Sub } from "../ui/Typography";
 
 function Globals(props) {
   const { globals } = props;
@@ -7,8 +9,8 @@ function Globals(props) {
     <StyledGlobals>
       <div className="container">
         <div className="globals">
-          <h2 className="globals__title">Indonesia</h2>
-          <p className="globals__sub_title">Data Covid Berdasarkan Indonesia</p>
+          <Heading>Global Situation</Heading>
+          <Sub fontColor="secondary">Data Covid Berdasarkan Global</Sub>
 
           {/* Show Data */}
           <div className="globals__main">

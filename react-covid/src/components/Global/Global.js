@@ -1,4 +1,5 @@
 import StyledGlobal from "./Global.styled";
+import { Box, Status, Total } from "../ui/Box";
 
 function Global(props) {
   const { global } = props;
@@ -11,11 +12,11 @@ function Global(props) {
 
   return (
     <StyledGlobal>
-      <div className="global__box">
-        <h5 className={cond}>
-          {global.status} <span>{global.total.toLocaleString()}</span>
-        </h5>
-      </div>
+      <Box>
+        <Status fontColor="black" className={cond}>
+          {global.status} <Total>{global.total.toLocaleString()}</Total>
+        </Status>
+      </Box>
     </StyledGlobal>
   );
 }

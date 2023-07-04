@@ -17,18 +17,6 @@ const StyledGlobals = styled.div`
     text-align: center;
   }
 
-  .globals__title {
-    color: #06d6a0;
-    margin-bottom: -1rem;
-    font-size: 2.5rem;
-  }
-
-  .globals__sub_title {
-    color: #118ab2;
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-  }
-
   /* Medium Screen */
   @media (min-width: 768px) {
     /* 
@@ -38,14 +26,6 @@ const StyledGlobals = styled.div`
 
   /* Large Screen */
   @media (min-width: 992px) {
-    .globals__title {
-      font-size: 3rem;
-    }
-
-    .globals__sub_title {
-      font-size: 1.3rem;
-    }
-
     .globals__main {
       flex-direction: row;
       justify-content: center;
