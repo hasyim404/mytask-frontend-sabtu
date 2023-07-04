@@ -1,12 +1,18 @@
-import styles from "./Alert.module.css";
+import styled from "styled-components";
+
+const StyledAlert = styled.div`
+  .alert {
+    color: #ef476f;
+  }
+`;
 
 function Alert(props) {
   const { children } = props;
 
   return (
-    <div>
-      <span className={styles.alert}>{children}</span>
-    </div>
+    <StyledAlert>
+      <span className="alert">{children}</span>
+    </StyledAlert>
   );
 }
 

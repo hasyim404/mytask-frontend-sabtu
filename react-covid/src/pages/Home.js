@@ -1,8 +1,9 @@
-import { Hero } from "../components/Hero";
-import Globals from "../components/Globals";
+import Hero from "../components/Hero/Hero";
+import Globals from "../components/Globals/Globals";
 import { useState } from "react";
-import Provinces from "../components/Provinces";
-import AddCovidForm from "../components/AddCovidForm";
+import Provinces from "../components/Provinces/Provinces";
+import AddCovidForm from "../components/AddCovidForm/AddCovidForm";
+
 // Data
 import indonesia from "../utils/constants/indonesia";
 import provinsi from "../utils/constants/provinces";
@@ -23,9 +24,7 @@ function Main() {
 function Home() {
   return (
     <>
-      {/* <Navbar /> */}
       <Main />
-      {/* <Footer /> */}
     </>
   );
 }
