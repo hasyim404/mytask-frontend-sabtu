@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-const StyledGlobal = styled.div`
-  .global__Positif span {
+const StyledIndonesiaSituation = styled.div`
+  .indonesia__Positif span {
     font-size: 40px;
     font-weight: 600;
     color: #06d6a0;
   }
 
-  .global__Sembuh span {
+  .indonesia__Sembuh span {
     font-size: 40px;
     font-weight: 600;
     color: #118ab2;
   }
 
-  .global__Meninggal span {
+  .indonesia__Meninggal span {
     font-size: 40px;
     font-weight: 600;
     color: #ef476f;
@@ -38,4 +38,4 @@ const StyledGlobal = styled.div`
   }
 `;
 
-export default StyledGlobal;
+export default StyledIndonesiaSituation;

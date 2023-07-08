@@ -32,6 +32,7 @@ const Box = styled.div`
 
 const Status = styled.h5`
   font-size: 30px;
+  text-transform: capitalize;
   color: ${function (props) {
     if (props.fontColor) {
       return props.theme.colors[props.fontColor].main;

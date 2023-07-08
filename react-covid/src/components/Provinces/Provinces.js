@@ -1,15 +1,34 @@
 import StyledProvinces from "./Provinces.styled";
+import Province from "../Province/Province";
+import { Heading, Sub } from "../ui/Typography";
+
+import ENDPOINTS from "../../utils/constants/endpoints";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Provinces(props) {
-  const { dataprov } = props;
-  const titles = ["Kota", "Kasus", "Sembuh", "Meninggal", "Dirawat"];
+  const [provinces, setProvinces] = useState([]);
+
+  const { title, sub } = props;
+  const titles = ["Provinsi", "Positif", "Sembuh", "Dirawat", "Meninggal"];
+
+  async function fetchProvinces() {
+    const response = await axios(ENDPOINTS.INDONESIA);
+    // console.log(response.data.regions);
+
+    setProvinces(response.data.regions);
+  }
+
+  useEffect(function () {
+    fetchProvinces();
+  }, []);
 
   return (
     <StyledProvinces>
       <div className="container">
         <div className="provinces">
-          <h2 className="provinces__title">Provinsi</h2>
-          <p className="globals__sub_title">Data Covid Berdasarkan Provinsi</p>
+          <Heading>{title}</Heading>
+          <Sub fontColor="secondary">{sub}</Sub>
 
           {/* Table */}
           <div className="provinces__table">
@@ -17,25 +36,21 @@ function Provinces(props) {
               <thead>
                 <tr>
                   <th className="provinces__no">No</th>
-                  {titles.map((titles, index) => {
-                    return <th key={index}>{titles}</th>;
+                  {titles.map((titles) => {
+                    return <th key={titles}>{titles}</th>;
                   })}
                 </tr>
               </thead>
               <tbody>
-                {dataprov.provinces.length > 0 &&
-                  dataprov.provinces.map((data, index) => {
-                    return (
-                      <tr key={index}>
-                        <td>{index + 1}.</td>
-                        <td>{data.kota}</td>
-                        <td>{data.kasus}</td>
-                        <td>{data.sembuh}</td>
-                        <td>{data.meninggal}</td>
-                        <td>{data.dirawat}</td>
-                      </tr>
-                    );
-                  })}
+                {provinces.map(function (province, index) {
+                  return (
+                    <Province
+                      key={province.name}
+                      index={index}
+                      province={province}
+                    />
+                  );
+                })}
               </tbody>
             </table>
           </div>
